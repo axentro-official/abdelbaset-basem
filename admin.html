@@ -15,7 +15,7 @@ body{background:repeating-linear-gradient(45deg,rgba(163,21,21,.03) 0 2px,transp
 button{font-family:'Cairo';cursor:pointer}
 #loginView{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px}
 .login-card{background:var(--paper);border:1.5px solid var(--line);border-radius:24px;padding:36px 28px;width:100%;max-width:390px;box-shadow:0 18px 44px rgba(122,17,17,.16);text-align:center}
-.mark{width:72px;height:72px;margin:0 auto 14px;border-radius:50%;background:linear-gradient(135deg,var(--maroon),var(--red2));color:#fff;display:flex;align-items:center;justify-content:center;font-size:30px;box-shadow:0 10px 22px rgba(122,17,17,.3)}
+ .mark{width:100px;height:100px;margin:0 auto 14px;border-radius:50%;display:block;object-fit:cover;border:3px solid var(--gold);box-shadow:0 10px 22px rgba(122,17,17,.3)}
 .login-card h1{font-size:20px;color:var(--maroon);font-weight:900}
 .sub{font-size:12.5px;color:#8a6f58;margin:4px 0 20px}
 .field{margin-bottom:12px;text-align:right}
@@ -32,7 +32,7 @@ input:focus{border-color:var(--red);box-shadow:0 0 0 3px rgba(163,21,21,.08)}
 #dashView{display:none}
 .topbar{position:sticky;top:0;z-index:20;background:linear-gradient(135deg,var(--maroon),var(--red));color:#fff;padding:calc(12px + env(safe-area-inset-top)) 18px 12px;display:flex;align-items:center;gap:10px;box-shadow:0 4px 14px rgba(122,17,17,.28)}
 .brand{font-weight:900;font-size:16px;display:flex;align-items:center;gap:9px}
-.brand .dot{width:34px;height:34px;background:#fff;color:var(--red);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
+.brand .dot{width:36px;height:36px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,255,255,.6);flex-shrink:0;display:block}
 .sp{flex:1}
 .topbar a,.topbar .out{color:#fff;text-decoration:none;font-size:12.5px;font-weight:700;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.3);padding:8px 14px;border-radius:10px;transition:.2s;white-space:nowrap}
 .topbar a:hover,.topbar .out:hover{background:rgba(255,255,255,.3)}
@@ -108,7 +108,7 @@ button:disabled{opacity:.55;transform:none!important}
 <!-- شاشة الدخول -->
 <div id="loginView">
  <div class="login-card">
-   <div class="mark">🍖</div>
+   <img class="mark" src="logo.png" alt="لوجو عبد الباسط باسم">
    <h1>لوحة تحكم عبد الباسط باسم</h1>
    <div class="sub">ادخل بيانات الأدمن لتعديل المنيو</div>
    <div class="field"><label>البريد الإلكتروني</label><input type="email" id="email" autocomplete="username" inputmode="email" placeholder="admin@basem.com"></div>
@@ -123,7 +123,7 @@ button:disabled{opacity:.55;transform:none!important}
 <!-- الداش بورد -->
 <div id="dashView">
  <div class="topbar">
-   <div class="brand"><span class="dot">🍖</span>لوحة تحكم المنيو</div>
+   <div class="brand"><img class="dot" src="logo.png" alt="لوجو"><span>لوحة تحكم المنيو</span></div>
    <span class="sp"></span>
    <a href="https://axentro-official.github.io/abdelbaset-basem" target="_blank">👁 معاينة</a>
    <button class="out" onclick="doLogout()">خروج ⏏</button>
