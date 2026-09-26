@@ -109,14 +109,12 @@ button:disabled{opacity:.55;transform:none!important}
 <div id="loginView">
  <div class="login-card">
    <img class="mark" src="logo.png" alt="لوجو عبد الباسط باسم">
-   <h1>لوحة تحكم عبد الباسط باسم</h1>
-   <div class="sub">ادخل بيانات الأدمن لتعديل المنيو</div>
+   <h1>لوحة تحكم المنيو </h1>
    <div class="field"><label>البريد الإلكتروني</label><input type="email" id="email" autocomplete="username" inputmode="email" placeholder="admin@basem.com"></div>
    <div class="field"><label>كلمة السر</label><input type="password" id="pass" autocomplete="current-password" placeholder="••••••••" onkeydown="if(event.key==='Enter')doLogin()"></div>
    <label class="remember"><input type="checkbox" id="remember" checked> تذكرني على الجهاز ده</label>
    <button class="pri" id="loginBtn" onclick="doLogin()">دخول 🔓</button>
    <div class="err" id="err"></div>
-   <div class="hint">🔒 الصفحة دي محمية — بيانات الدخول من Firebase Authentication</div>
  </div>
 </div>
 
