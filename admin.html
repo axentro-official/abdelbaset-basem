@@ -196,9 +196,11 @@ let cats=[],dirty=false,saving=false,auth,db,wasLoggedIn=false;
 firebase.initializeApp(FIREBASE_CONFIG);
 auth=firebase.auth();db=firebase.firestore();
 
-/* استرجاع البريد المحفوظ (تذكرني) */
+/* استرجاع بيانات الدخول المحفوظة (تذكرني) */
 const savedEmail=localStorage.getItem('basem_admin_email');
+const savedPass=localStorage.getItem('basem_admin_pass');
 if(savedEmail)$('email').value=savedEmail;
+if(savedPass)$('pass').value=savedPass;
 
 auth.onAuthStateChanged(u=>{
   if(u){
@@ -306,9 +308,9 @@ function doLogin(){
  $('err').style.display='none';
  if(!em||!pw){$('err').textContent='اكتب البريد وكلمة السر';$('err').style.display='block';return}
  $('loginBtn').disabled=true;
- auth.signInWithEmailAndPassword(em,pw).then(()=>{
-   if($('remember').checked)localStorage.setItem('basem_admin_email',em);
-   else localStorage.removeItem('basem_admin_email');
+  auth.signInWithEmailAndPassword(em,pw).then(()=>{
+   if($('remember').checked){localStorage.setItem('basem_admin_email',em);localStorage.setItem('basem_admin_pass',pw);}
+   else{localStorage.removeItem('basem_admin_email');localStorage.removeItem('basem_admin_pass');}
  }).catch(e=>{
    $('err').textContent=(e.code==='auth/invalid-credential'||e.code==='auth/wrong-password'||e.code==='auth/user-not-found')?'البريد أو كلمة السر غير صحيحة':(e.code==='auth/too-many-requests')?'محاولات كتير — استنى شوية وجرب تاني':'حدث خطأ: '+e.code;
    $('err').style.display='block';
