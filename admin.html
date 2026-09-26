@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>لوحة التحكم — مشويات عبد الباسط باسم</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+:root{--maroon:#6f1010;--red:#a31515;--red2:#c62828;--cream:#f6efe3;--paper:#fffdf8;--ink:#3a241a;--line:#eadbc4;--gold:#e9a13b;--ok:#1e9e50}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Cairo',sans-serif}
+body{background:repeating-linear-gradient(45deg,rgba(163,21,21,.03) 0 2px,transparent 2px 16px),var(--cream);color:var(--ink);min-height:100vh}
+button{font-family:'Cairo';cursor:pointer}
+#loginView{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px}
+.login-card{background:var(--paper);border:1.5px solid var(--line);border-radius:24px;padding:36px 28px;width:100%;max-width:390px;box-shadow:0 18px 44px rgba(122,17,17,.16);text-align:center}
+.mark{width:72px;height:72px;margin:0 auto 14px;border-radius:50%;background:linear-gradient(135deg,var(--maroon),var(--red2));color:#fff;display:flex;align-items:center;justify-content:center;font-size:30px;box-shadow:0 10px 22px rgba(122,17,17,.3)}
+.login-card h1{font-size:20px;color:var(--maroon);font-weight:900}
+.sub{font-size:12.5px;color:#8a6f58;margin:4px 0 20px}
+.field{margin-bottom:12px;text-align:right}
+label{display:block;font-size:12.5px;font-weight:700;margin-bottom:4px;color:#6b4a3a}
+input{width:100%;padding:11px 13px;border:1.5px solid var(--line);border-radius:12px;background:#fff;font-size:14.5px;outline:none;transition:.2s;font-family:'Cairo'}
+input:focus{border-color:var(--red);box-shadow:0 0 0 3px rgba(163,21,21,.08)}
+.pri{width:100%;background:linear-gradient(135deg,var(--maroon),var(--red2));color:#fff;border:none;font-weight:900;font-size:15.5px;padding:12px;border-radius:13px;transition:.2s;margin-top:6px}
+.pri:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(122,17,17,.35)}
+.pri:disabled{opacity:.6;transform:none}
+.err{display:none;background:#fdecea;color:#b3261e;border:1px solid #f5c6c1;font-size:12.5px;font-weight:700;border-radius:10px;padding:9px;margin-top:13px}
+.hint{font-size:11px;color:#a08a76;margin-top:14px;line-height:1.8}
+#dashView{display:none}
+.topbar{position:sticky;top:0;z-index:20;background:linear-gradient(135deg,var(--maroon),var(--red));color:#fff;padding:12px 18px;display:flex;align-items:center;gap:10px;box-shadow:0 4px 14px rgba(122,17,17,.28)}
+.brand{font-weight:900;font-size:16px;display:flex;align-items:center;gap:9px}
+.brand .dot{width:34px;height:34px;background:#fff;color:var(--red);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px}
+.sp{flex:1}
+.topbar a,.topbar .out{color:#fff;text-decoration:none;font-size:12.5px;font-weight:700;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.3);padding:7px 13px;border-radius:10px;transition:.2s}
+.topbar a:hover,.topbar .out:hover{background:rgba(255,255,255,.3)}
+.container{max-width:840px;margin:0 auto;padding:20px 16px 90px}
+.toolbar{position:sticky;top:59px;z-index:15;background:rgba(246,239,227,.93);backdrop-filter:blur(6px);border:1.5px solid var(--line);border-radius:16px;padding:11px 13px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:18px;box-shadow:0 8px 20px rgba(122,17,17,.08)}
+.chip{font-size:11.5px;font-weight:900;padding:6px 13px;border-radius:20px;background:#e9ddc8;color:#8a6f58;transition:.2s}
+.chip.dirty{background:#fff3cd;color:#8a6d1a}
+.chip.saved{background:#dcf5e5;color:var(--ok)}
+.btn2{border:none;font-weight:900;font-size:13.5px;padding:9px 15px;border-radius:11px;transition:.2s}
+.pri2{background:linear-gradient(135deg,var(--maroon),var(--red2));color:#fff}
+.pri2:hover{transform:translateY(-2px);box-shadow:0 8px 18px rgba(122,17,17,.3)}
+.ghost{background:#fff;border:1.5px solid var(--line);color:var(--ink)}
+.ghost:hover{border-color:var(--red);color:var(--red)}
+.danger{background:#fff;border:1.5px solid #f0c7c2;color:#b3261e}
+.danger:hover{background:#fdf0ef}
+button:disabled{opacity:.55;transform:none!important}
+.cat{background:var(--paper);border:1.5px solid var(--line);border-radius:18px;padding:15px;margin-bottom:15px;box-shadow:0 8px 22px rgba(122,17,17,.08)}
+.cat-head{display:flex;gap:8px;align-items:center;margin-bottom:9px;flex-wrap:wrap}
+.cat-head input.t{flex:1;min-width:170px;font-weight:900;font-size:16px;color:var(--maroon)}
+.cat-head input.n{flex:1;min-width:170px;font-size:12.5px;color:#8a6f58;background:#fdf8ef}
+.icon-btn{width:36px;height:36px;border-radius:10px;border:1.5px solid var(--line);background:#fff;font-size:15px;color:#6b4a3a;transition:.15s;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.icon-btn:hover{border-color:var(--red);color:var(--red)}
+.icon-btn.del:hover{border-color:#d33;color:#d33;background:#fdf0ef}
+.icon-btn.sm{width:31px;height:31px;font-size:13px;border-radius:8px}
+.items{border-top:1.5px dashed var(--line);padding-top:10px}
+.item-row{display:grid;grid-template-columns:1fr 125px auto;gap:7px;margin-bottom:7px;align-items:center}
+@media(max-width:560px){.item-row{grid-template-columns:1fr 90px auto}}
+.item-row input{padding:8.5px 11px;font-size:14px}
+.item-row input.p{font-weight:900;color:var(--red);text-align:center}
+.row-btns{display:flex;gap:5px}
+.add-item{width:100%;border:1.5px dashed #cdb59a;background:#fdf8ef;color:#8a6f58;font-weight:700;font-size:13.5px;padding:9px;border-radius:11px;transition:.2s}
+.add-item:hover{border-color:var(--red);color:var(--red)}
+.empty{text-align:center;color:#8a6f58;padding:50px 10px;font-weight:700}
+.toast{position:fixed;bottom:22px;left:50%;transform:translateX(-50%) translateY(90px);background:var(--maroon);color:#fff;font-weight:900;padding:12px 26px;border-radius:30px;box-shadow:0 10px 26px rgba(0,0,0,.35);transition:.35s;opacity:0;z-index:99;font-size:13.5px;max-width:92%;text-align:center}
+.toast.show{transform:translateX(-50%) translateY(0);opacity:1}
+.toast.err{background:#b3261e}
+</style>
+</head>
+<body>
+
+<!-- شاشة الدخول -->
+<div id="loginView">
+ <div class="login-card">
+   <div class="mark">🍖</div>
+   <h1>لوحة تحكم عبد الباسط باسم</h1>
+   <div class="sub">ادخل بيانات الأدمن لتعديل المنيو</div>
+   <div class="field"><label>البريد الإلكتروني</label><input type="email" id="email" autocomplete="username" placeholder="admin@basem.com"></div>
+   <div class="field"><label>كلمة السر</label><input type="password" id="pass" autocomplete="current-password" placeholder="••••••••" onkeydown="if(event.key==='Enter')doLogin()"></div>
+   <button class="pri" id="loginBtn" onclick="doLogin()">دخول 🔓</button>
+   <div class="err" id="err"></div>
+   <div class="hint">🔒 الصفحة دي محمية — بيانات الدخول من Firebase Authentication</div>
+ </div>
+</div>
+
+<!-- الداش بورد -->
+<div id="dashView">
+ <div class="topbar">
+   <div class="brand"><span class="dot">🍖</span>لوحة تحكم المنيو</div>
+   <span class="sp"></span>
+   <a href="https://abdelbaset-basm.netlify.app" target="_blank">👁 معاينة</a>
+   <button class="out" onclick="auth.signOut()">خروج ⏏</button>
+ </div>
+ <div class="container">
+   <div class="toolbar">
+     <span class="chip" id="chip">جاهز</span>
+     <span class="sp"></span>
+     <button class="btn2 ghost" onclick="addCat()">➕ قسم جديد</button>
+     <button class="btn2 danger" onclick="resetDefault()">↺ استرجاع الافتراضي</button>
+     <button class="btn2 pri2" id="saveBtn" onclick="saveAll()">💾 حفظ ونشر</button>
+   </div>
+   <div id="catsBox"></div>
+ </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+<script>
+/* ====== إعدادات Firebase بتاعتك ====== */
+const FIREBASE_CONFIG={apiKey:"AIzaSyDd8iGNnZHZBOLEbiKTdLo7zh93itrDbuA",authDomain:"basem-grill.firebaseapp.com",projectId:"basem-grill",storageBucket:"basem-grill.firebasestorage.app",messagingSenderId:"577729489629",appId:"1:577729489629:web:1e3a6b69abcc0d6384c934"};
+
+/* المنيو الافتراضي (يستخدم لو السحابة فاضية) */
+const DEFAULT_MENU=[
+ {t:"🔥 ركن مشويات اللحوم",n:"الأسعار بالكيلو • مشوية على الفحم",items:[
+   {name:"ريش",price:"1200"},{name:"كباب",price:"1200"},{name:"مشكل (ضاني)",price:"850"},{name:"مشكل",price:"800"},
+   {name:"ميكسيك جرييل",price:"700"},{name:"كفتة (ضاني)",price:"500"},{name:"كفتة كندوز",price:"400"},
+   {name:"طرب",price:"600"},{name:"سجق وقوانص",price:"280"}]},
+ {t:"🍗 ركن مشويات الفراخ",n:"",items:[
+   {name:"نص فرخة",price:"170"},{name:"ربع فرخة صدر",price:"100"},{name:"ربع فرخة وراك",price:"90"},
+   {name:"كيلو شيش طاووق",price:"440"},{name:"جوزة حمام محشي فريك",price:"320"},
+   {name:"جوزة حمام محشي أرز",price:"320"},{name:"فردة حمام",price:"160"}]},
+ {t:"🥖 ركن سندوتشات اللحوم",n:"",items:[
+   {name:"ساندوتش طرب",price:"70"},{name:"ساندوتش كباب",price:"125"},{name:"ساندوتش شيش طاووق",price:"60"},
+   {name:"كفتة مشوية على الفحم",price:"35 / 50"},{name:"حواوشي عبد الباسط",price:"35 / 50"}]},
+ {t:"🥘 ركن المحاشي",n:"صغير / وسط / كبير",items:[
+   {name:"كوسة • فلفل • باذنجان • كرنب",price:"30 / 45 / 60"},
+   {name:"بطاطس محمرة",price:"30"},{name:"خضار مشكل",price:"15"},{name:"شوربة لسان عصفور",price:"15"}]},
+ {t:"🍚 ركن اللازز",n:"صغير / وسط / كبير",items:[
+   {name:"رز أبيض بالخلطة",price:"30 / 45 / 60"},{name:"رز أبيض سادة",price:"25 / 35 / 50"},
+   {name:"رز بسمتي بالخلطة",price:"30 / 45 / 60"},{name:"رز بسمتي سادة",price:"25 / 35 / 50"}]},
+ {t:"🥗 ركن السلطات",n:"",items:[
+   {name:"سلطة بلدي",price:"5"},{name:"بابا غنوج",price:"5"},{name:"طحينة",price:"5"},{name:"ثومية",price:"10"},{name:"مخلل مشكل",price:"5"}]},
+ {t:"🍽️ ركن التسوية (إضافي)",n:"",items:[
+   {name:"تسوية البط والديك الرومي وكباب حلة",price:"60"},
+   {name:"تسوية الكفتة والفراخ واللحمة",price:"50"}]}
+];
+
+const $=id=>document.getElementById(id);
+const esc=s=>String(s??'').replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+const cp=o=>JSON.parse(JSON.stringify(o));
+let cats=[],dirty=false,saving=false,auth,db;
+
+firebase.initializeApp(FIREBASE_CONFIG);
+auth=firebase.auth();db=firebase.firestore();
+auth.onAuthStateChanged(u=>{
+  if(u){$('loginView').style.display='none';$('dashView').style.display='block';loadMenu()}
+  else{$('dashView').style.display='none';$('loginView').style.display='flex'}
+});
+
+async function loadMenu(){
+ try{
+  const s=await db.collection('menu').doc('data').get();
+  cats=(s.exists&&Array.isArray(s.data().cats)&&s.data().cats.length)?s.data().cats:cp(DEFAULT_MENU);
+ }catch(e){cats=cp(DEFAULT_MENU);toast('تعذر الاتصال بالسحابة — اشتغل محلياً واضغط حفظ لاحقاً',true)}
+ dirty=false;renderCats();setChip();
+}
+
+function renderCats(){
+ $('catsBox').innerHTML=cats.length?cats.map((c,i)=>`
+ <div class="cat">
+  <div class="cat-head">
+    <input class="t" value="${esc(c.t)}" oninput="setCat(${i},'t',this.value)" placeholder="اسم القسم">
+    <button class="icon-btn" onclick="moveCat(${i},-1)" title="لأعلى">↑</button>
+    <button class="icon-btn" onclick="moveCat(${i},1)" title="لأسفل">↓</button>
+    <button class="icon-btn del" onclick="delCat(${i})" title="حذف القسم">🗑</button>
+  </div>
+  <div class="cat-head">
+    <input class="n" value="${esc(c.n||'')}" oninput="setCat(${i},'n',this.value)" placeholder="ملاحظة اختيارية (مثل: صغير / وسط / كبير)">
+  </div>
+  <div class="items">
+    ${(c.items||[]).map((it,j)=>`
+    <div class="item-row">
+      <input value="${esc(it.name)}" oninput="setItem(${i},${j},'name',this.value)" placeholder="اسم الصنف">
+      <input class="p" value="${esc(it.price)}" oninput="setItem(${i},${j},'price',this.value)" placeholder="السعر">
+      <div class="row-btns">
+        <button class="icon-btn sm" onclick="moveItem(${i},${j},-1)">↑</button>
+        <button class="icon-btn sm" onclick="moveItem(${i},${j},1)">↓</button>
+        <button class="icon-btn sm del" onclick="delItem(${i},${j})">✕</button>
+      </div>
+    </div>`).join('')}
+    <button class="add-item" onclick="addItem(${i})">➕ إضافة صنف جديد</button>
+  </div>
+ </div>`).join(''):'<div class="empty">مفيش أقسام لحد الآن — اضغط "قسم جديد" عشان تبدأ 🍽️</div>';
+}
+
+function setCat(i,k,v){cats[i][k]=v;markDirty()}
+function setItem(i,j,k,v){cats[i].items[j][k]=v;markDirty()}
+function addCat(){cats.push({t:'🍽️ قسم جديد',n:'',items:[{name:'',price:''}]});dirty=true;renderCats();setChip();window.scrollTo({top:document.body.scrollHeight,behavior:'smooth'})}
+function delCat(i){if(!confirm('متأكد من حذف القسم "'+cats[i].t+'" وكل أصنافه؟'))return;cats.splice(i,1);dirty=true;renderCats();setChip()}
+function moveCat(i,d){const j=i+d;if(j<0||j>=cats.length)return;[cats[i],cats[j]]=[cats[j],cats[i]];dirty=true;renderCats();setChip()}
+function addItem(i){(cats[i].items=cats[i].items||[]).push({name:'',price:''});dirty=true;renderCats();setChip()}
+function delItem(i,j){cats[i].items.splice(j,1);dirty=true;renderCats();setChip()}
+function moveItem(i,j,d){const a=cats[i].items,k=j+d;if(k<0||k>=a.length)return;[a[j],a[k]]=[a[k],a[j]];dirty=true;renderCats();setChip()}
+
+function markDirty(){dirty=true;setChip()}
+function setChip(){const c=$('chip');if(dirty){c.textContent='● تغييرات غير محفوظة';c.className='chip dirty'}else{c.textContent='✓ محفوظ ومتنشر';c.className='chip saved'}}
+
+async function saveAll(){
+ if(saving)return;saving=true;setSaveBtn();
+ const clean=cats.filter(c=>c.t&&c.t.trim()).map(c=>({t:c.t.trim(),n:(c.n||'').trim(),items:(c.items||[]).filter(x=>x.name&&x.name.trim()).map(x=>({name:x.name.trim(),price:String(x.price??'').trim()}))}));
+ if(!clean.length){toast('لازم قسم واحد على الأقل باسم صحيح',true);saving=false;setSaveBtn();return}
+ try{
+  await db.collection('menu').doc('data').set({cats:clean,updatedAt:Date.now()});
+  cats=clean;dirty=false;setChip();toast('تم الحفظ والنشر ✅ الموقع اتحدث فوراً عند كل الزوار');
+ }catch(e){toast('تعذر الحفظ: '+e.code,true)}
+ saving=false;setSaveBtn();
+}
+function setSaveBtn(){const b=$('saveBtn');b.disabled=saving;b.textContent=saving?'⏳ بيتحفظ...':'💾 حفظ ونشر'}
+function resetDefault(){if(!confirm('هترجع بالمنيو للنسخة الافتراضية؟ (لازم تضغط حفظ بعد كده)'))return;cats=cp(DEFAULT_MENU);dirty=true;renderCats();setChip()}
+
+function doLogin(){
+ const em=$('email').value.trim(),pw=$('pass').value;
+ $('err').style.display='none';
+ if(!em||!pw){$('err').textContent='اكتب البريد وكلمة السر';$('err').style.display='block';return}
+ $('loginBtn').disabled=true;
+ auth.signInWithEmailAndPassword(em,pw).catch(e=>{
+   $('err').textContent=(e.code==='auth/invalid-credential'||e.code==='auth/wrong-password'||e.code==='auth/user-not-found')?'البريد أو كلمة السر غير صحيحة':(e.code==='auth/too-many-requests')?'محاولات كتير — استنى شوية وجرب تاني':'حدث خطأ: '+e.code;
+   $('err').style.display='block';
+ }).finally(()=>{$('loginBtn').disabled=false});
+}
+
+let toastTimer;
+function toast(msg,isErr){const t=$('toast');t.textContent=msg;t.className='toast show'+(isErr?' err':'');clearTimeout(toastTimer);toastTimer=setTimeout(()=>t.className='toast',3200)}
+window.addEventListener('beforeunload',e=>{if(dirty){e.preventDefault();e.returnValue=''}});
+</script>
+</body>
+</html>

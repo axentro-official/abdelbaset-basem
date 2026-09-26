@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>مشويات عبد الباسط باسم 🍖 | مطعم مشويات على الفحم</title>
+
+<!-- ====== معاينة اللينك (بعد ما تاخد اللينك من Netlify بدّل PLACE-YOUR-LINK مكانين) ====== -->
+<meta property="og:title" content="مشويات عبد الباسط باسم 🍖">
+<meta property="og:description" content="المنيو الكامل • اطلب دليفري • فرع الخمسين – أمام المعهد الأزهري">
+<meta property="og:image" content="https://abdelbaset-basm.netlify.app/og-image.jpg">
+<meta property="og:url" content="https://abdelbaset-basm.netlify.app/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#a31515">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+
+<style>
+:root{
+ --maroon:#6f1010; --red:#a31515; --red2:#c62828;
+ --cream:#f6efe3; --paper:#fffdf8; --ink:#3a241a;
+ --line:#eadbc4; --gold:#e9a13b;
+}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Cairo',sans-serif}
+html{scroll-behavior:smooth}
+body{color:var(--ink);min-height:100vh;
+ background:repeating-linear-gradient(45deg,rgba(163,21,21,.03) 0 2px,transparent 2px 16px),var(--cream)}
+.wrap{max-width:480px;margin:0 auto;padding:20px 16px 60px}
+svg{fill:currentColor;flex-shrink:0}
+
+.share-btn{position:absolute;top:14px;left:14px;width:42px;height:42px;border-radius:50%;
+ background:var(--maroon);border:1px solid rgba(255,255,255,.3);color:#fff;cursor:pointer;
+ display:flex;align-items:center;justify-content:center;transition:.25s;z-index:5}
+.share-btn svg{width:19px;height:19px}
+.share-btn:hover{background:var(--red2);transform:scale(1.08)}
+
+.hero{background:linear-gradient(160deg,#7a1111,#a31515 55%,#8f1d1d);border-radius:26px;
+ padding:32px 18px 26px;text-align:center;color:#fff;position:relative;overflow:hidden;
+ box-shadow:0 14px 34px rgba(122,17,17,.35)}
+.hero::before{content:'';position:absolute;inset:0;
+ background:radial-gradient(circle at 85% 12%,rgba(233,161,59,.20),transparent 42%),
+            radial-gradient(circle at 8% 95%,rgba(0,0,0,.28),transparent 48%)}
+.hero>*{position:relative}
+.logo{width:112px;height:112px;margin:0 auto 14px;border-radius:50%;background:var(--paper);
+ border:3px solid var(--gold);display:flex;flex-direction:column;align-items:center;justify-content:center;
+ box-shadow:0 10px 26px rgba(0,0,0,.35);animation:floaty 5s ease-in-out infinite}
+.logo b{color:var(--red);font-size:19px;font-weight:900;line-height:1}
+.logo span{color:var(--maroon);font-size:11.5px;font-weight:700;margin-top:3px}
+.hero h1{font-size:26px;font-weight:900;text-shadow:0 2px 8px rgba(0,0,0,.3)}
+.hero p{font-size:13.5px;opacity:.93;margin-top:4px}
+@keyframes floaty{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-9px) rotate(.8deg)}}
+
+.actions{display:flex;flex-direction:column;gap:11px;margin-top:22px}
+.btn{display:flex;align-items:center;justify-content:center;gap:10px;
+ background:linear-gradient(135deg,var(--maroon),var(--red2));color:#fff;
+ font-weight:900;font-size:16px;padding:14px;border-radius:40px;text-decoration:none;
+ box-shadow:0 6px 18px rgba(122,17,17,.35);transition:.2s;border:none;cursor:pointer;font-family:'Cairo'}
+.btn svg{width:21px;height:21px}
+.btn:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(122,17,17,.45)}
+.btn:active{transform:scale(.97)}
+.socials{display:flex;justify-content:center;gap:14px;margin-top:18px}
+.socials a{width:48px;height:48px;border-radius:50%;background:var(--maroon);color:#fff;
+ border:1.5px solid rgba(122,17,17,.25);display:flex;align-items:center;justify-content:center;
+ transition:.2s;box-shadow:0 4px 12px rgba(122,17,17,.25)}
+.socials a svg{width:22px;height:22px}
+.socials a:hover{background:var(--red2);transform:scale(1.12) translateY(-2px)}
+
+.branch{background:var(--paper);border:1.5px solid var(--line);border-radius:22px;padding:20px 18px 18px;
+ margin-top:28px;box-shadow:0 12px 28px rgba(122,17,17,.12);position:relative}
+.branch::before{content:'';position:absolute;top:0;right:14px;left:14px;height:5px;
+ border-radius:0 0 8px 8px;background:linear-gradient(90deg,var(--maroon),var(--red2),var(--maroon))}
+.branch h2{color:var(--maroon);font-size:18px;font-weight:900;text-align:center;margin-top:4px}
+.addr{text-align:center;font-size:13px;color:#8a6f58;margin:6px 0 12px;display:flex;align-items:center;justify-content:center;gap:5px}
+.addr svg{width:15px;height:15px}
+.chips{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px}
+.chips a{text-decoration:none;background:#fff;border:1.5px solid var(--line);color:var(--ink);
+ font-weight:700;font-size:14px;padding:9px;border-radius:12px;text-align:center;transition:.2s;direction:ltr}
+.chips a:hover{border-color:var(--red);color:var(--red)}
+.wa{display:flex;align-items:center;justify-content:center;gap:9px;background:#25D366;color:#fff;
+ font-weight:900;padding:12px;border-radius:14px;text-decoration:none;font-size:15px;margin-bottom:14px;
+ box-shadow:0 6px 16px rgba(37,211,102,.35)}
+.wa svg{width:20px;height:20px}
+.map-card{border-radius:18px;overflow:hidden;border:3px solid #fff;background:#fff;
+ box-shadow:0 14px 30px rgba(122,17,17,.18);animation:floaty 6s ease-in-out infinite}
+.map-card iframe{width:100%;height:210px;border:0;display:block}
+.dir{display:flex;align-items:center;justify-content:center;gap:8px;
+ background:linear-gradient(135deg,var(--maroon),var(--red2));color:#fff;font-weight:900;
+ padding:11px;text-decoration:none;font-size:14px}
+.dir svg{width:17px;height:17px}
+
+footer{text-align:center;color:#8a6f58;font-size:12.5px;margin-top:26px;line-height:1.9}
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(80px);background:var(--maroon);
+ color:#fff;font-weight:900;padding:12px 26px;border-radius:30px;box-shadow:0 8px 24px rgba(0,0,0,.35);
+ transition:.35s;opacity:0;z-index:99;font-size:13.5px}
+.toast.show{transform:translateX(-50%) translateY(0);opacity:1}
+
+.menu-overlay{position:fixed;inset:0;background:var(--cream);z-index:50;display:none;flex-direction:column}
+.menu-overlay.open{display:flex;animation:fadeUp .3s ease}
+@keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:none}}
+.menu-head{box-shadow:0 4px 16px rgba(122,17,17,.18)}
+.menu-topbar{background:linear-gradient(135deg,var(--maroon),var(--red));color:#fff;
+ padding:12px 16px;display:grid;grid-template-columns:40px 1fr 40px;align-items:center}
+.menu-topbar .title{text-align:center;font-weight:900;font-size:17px;display:flex;align-items:center;justify-content:center;gap:8px}
+.menu-topbar .title svg{width:21px;height:21px}
+.close-btn{width:40px;height:40px;border-radius:50%;border:none;background:rgba(255,255,255,.15);color:#fff;
+ cursor:pointer;display:flex;align-items:center;justify-content:center;transition:.25s}
+.close-btn svg{width:19px;height:19px}
+.close-btn:hover{background:rgba(255,255,255,.3);transform:rotate(90deg)}
+.cat-nav{display:flex;gap:8px;overflow-x:auto;padding:11px 14px;background:var(--paper);
+ border-bottom:1.5px solid var(--line);scrollbar-width:none}
+.cat-nav::-webkit-scrollbar{display:none}
+.cat-chip{flex-shrink:0;padding:8px 16px;border-radius:30px;border:1.5px solid var(--line);
+ background:#fff;font-weight:700;font-size:13px;color:var(--ink);cursor:pointer;transition:.2s;font-family:'Cairo'}
+.cat-chip.active,.cat-chip:hover{background:var(--maroon);color:#fff;border-color:var(--maroon)}
+.menu-body{flex:1;overflow-y:auto;padding:16px 16px 46px;max-width:520px;margin:0 auto;width:100%}
+
+.cat{background:var(--paper);border:1.5px solid var(--line);border-radius:20px;padding:16px;
+ margin-bottom:14px;box-shadow:0 10px 24px rgba(122,17,17,.10);scroll-margin-top:16px}
+.menu-overlay.open .cat{animation:pop .45s ease backwards}
+.menu-overlay.open .cat:nth-child(2){animation-delay:.06s}
+.menu-overlay.open .cat:nth-child(3){animation-delay:.12s}
+.menu-overlay.open .cat:nth-child(4){animation-delay:.18s}
+.menu-overlay.open .cat:nth-child(5){animation-delay:.24s}
+.menu-overlay.open .cat:nth-child(6){animation-delay:.3s}
+.menu-overlay.open .cat:nth-child(7){animation-delay:.36s}
+@keyframes pop{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+.cat h3{display:inline-block;background:linear-gradient(135deg,var(--maroon),var(--red));color:#fff;
+ font-size:16px;font-weight:900;padding:8px 26px;margin-bottom:8px;
+ clip-path:polygon(0 0,100% 0,97.5% 50%,100% 100%,0 100%,2.5% 50%);
+ box-shadow:0 4px 12px rgba(122,17,17,.3)}
+.cat .note{font-size:11.5px;color:#8a6f58;display:block;margin-bottom:8px}
+.item{display:flex;align-items:baseline;gap:8px;padding:7px 0;font-size:15px}
+.item .name{font-weight:700}
+.item .dots{flex:1;border-bottom:2px dotted #dcc9ae;transform:translateY(-4px)}
+.item .price{font-weight:900;color:var(--red);white-space:nowrap;direction:ltr}
+</style>
+</head>
+<body>
+<button class="share-btn" onclick="shareSite()" title="مشاركة" aria-label="مشاركة">
+ <svg viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z"/></svg>
+</button>
+
+<div class="wrap">
+  <header class="hero">
+    <div class="logo"><b>عبد الباسط</b><span>باسم • مشويات</span></div>
+    <h1>مشويات عبد الباسط باسم</h1>
+    <p>🍖 طعمه الأصلي على الفحم • من سنة وقداتنا</p>
+  </header>
+
+  <div class="actions">
+    <button class="btn" onclick="openMenu()">
+      <svg viewBox="0 0 24 24"><path d="M21 5c-1.11-.35-2.33-.5-3.5-.5-1.95 0-4.05.4-5.5 1.5-1.45-1.1-3.55-1.5-5.5-1.5S2.45 4.9 1 6v14.65c0 .25.25.5.5.5.1 0 .15-.05.25-.05C3.1 20.45 5.05 20 6.5 20c1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.3 4.75 1.05.1.05.15.05.25.05.25 0 .5-.25.5-.5V6c-.6-.45-1.25-.75-2-1zm0 13.5c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V8c1.35-.85 3.8-1.5 5.5-1.5 1.2 0 2.4.15 3.5.5v11.5z"/></svg>
+      المنيو الكامل
+    </button>
+    <a class="btn" target="_blank" href="https://wa.me/201026554113">
+      <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+      اطلب دليفري
+    </a>
+  </div>
+
+  <div class="socials">
+    <a href="https://www.facebook.com/basem010144" target="_blank" title="فيسبوك" aria-label="فيسبوك">
+      <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+    </a>
+    <a href="https://wa.me/201026554113" target="_blank" title="واتساب" aria-label="واتساب">
+      <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+    </a>
+    <a href="tel:+20100420580" title="اتصال" aria-label="اتصال">
+      <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+    </a>
+  </div>
+
+  <section class="branch">
+    <h2>📍 فرع الخمسين</h2>
+    <div class="addr">
+      <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+      خلف ديكا بدر – أمام المعهد الأزهري
+    </div>
+    <div class="chips">
+      <a href="tel:+20100420580">01004204580</a>
+      <a href="tel:+201119014574">01119014574</a>
+      <a href="tel:+20221931054">0221931054</a>
+      <a href="tel:+20221931011">0221931011</a>
+    </div>
+    <a class="wa" target="_blank" href="https://wa.me/201026554113?text=%D8%A3%D9%87%D9%84%D8%A7%D9%8B%D8%8C%20%D8%B9%D8%A7%D9%8A%D8%B2%20%D8%A3%D8%B7%D9%84%D8%A8%20%D8%A3%D9%88%D8%B1%D8%AF%D8%B1">
+      <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+      اطلب واتساب — 01026554113
+    </a>
+    <div class="map-card">
+      <iframe src="https://maps.google.com/maps?q=مشويات%20عبد%20الباسط%20باسم%20فرع%20الخمسين&z=16&output=embed" loading="lazy" allowfullscreen></iframe>
+      <a class="dir" target="_blank" href="https://maps.app.goo.gl/gFNLSjFQK5ymNKWo6">
+        <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+        الاتجاهات على الخريطة
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    أسعارنا بالجنيه المصري وقابلة للتغيير<br>
+    مشويات عبد الباسط باسم © <span id="yr"></span> — كل الحقوق محفوظة
+  </footer>
+</div>
+
+<!-- صفحة المنيو -->
+<div class="menu-overlay" id="menuOverlay" role="dialog" aria-modal="true">
+  <div class="menu-head">
+    <div class="menu-topbar">
+      <button class="close-btn" onclick="closeMenu()" title="إغلاق" aria-label="إغلاق">
+        <svg viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+      </button>
+      <span class="title">
+        <svg viewBox="0 0 24 24"><path d="M21 5c-1.11-.35-2.33-.5-3.5-.5-1.95 0-4.05.4-5.5 1.5-1.45-1.1-3.55-1.5-5.5-1.5S2.45 4.9 1 6v14.65c0 .25.25.5.5.5.1 0 .15-.05.25-.05C3.1 20.45 5.05 20 6.5 20c1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.3 4.75 1.05.1.05.15.05.25.05.25 0 .5-.25.5-.5V6c-.6-.45-1.25-.75-2-1zm0 13.5c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V8c1.35-.85 3.8-1.5 5.5-1.5 1.2 0 2.4.15 3.5.5v11.5z"/></svg>
+        المنيو الكامل
+      </span>
+      <span></span>
+    </div>
+    <nav class="cat-nav" id="catNav"></nav>
+  </div>
+  <div class="menu-body" id="menuBody"></div>
+</div>
+
+<div class="toast" id="toast">تم نسخ اللينك ✅</div>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+<script>
+/* ====== إعدادات Firebase بتاعتك ====== */
+const FIREBASE_CONFIG={apiKey:"AIzaSyDd8iGNnZHZBOLEbiKTdLo7zh93itrDbuA",authDomain:"basem-grill.firebaseapp.com",projectId:"basem-grill",storageBucket:"basem-grill.firebasestorage.app",messagingSenderId:"577729489629",appId:"1:577729489629:web:1e3a6b69abcc0d6384c934"};
+
+/* المنيو الافتراضي — بيشتغل لو السحابة مش متاحة */
+const DEFAULT_MENU=[
+ {t:"🔥 ركن مشويات اللحوم",n:"الأسعار بالكيلو • مشوية على الفحم",i:[
+   ["ريش","1200"],["كباب","1200"],["مشكل (ضاني)","850"],["مشكل","800"],
+   ["ميكسيك جرييل","700"],["كفتة (ضاني)","500"],["كفتة كندوز","400"],
+   ["طرب","600"],["سجق وقوانص","280"]]},
+ {t:"🍗 ركن مشويات الفراخ",i:[
+   ["نص فرخة","170"],["ربع فرخة صدر","100"],["ربع فرخة وراك","90"],
+   ["كيلو شيش طاووق","440"],["جوزة حمام محشي فريك","320"],
+   ["جوزة حمام محشي أرز","320"],["فردة حمام","160"]]},
+ {t:"🥖 ركن سندوتشات اللحوم",i:[
+   ["ساندوتش طرب","70"],["ساندوتش كباب","125"],["ساندوتش شيش طاووق","60"],
+   ["كفتة مشوية على الفحم","35 / 50"],["حواوشي عبد الباسط","35 / 50"]]},
+ {t:"🥘 ركن المحاشي",n:"صغير / وسط / كبير",i:[
+   ["كوسة • فلفل • باذنجان • كرنب","30 / 45 / 60"],
+   ["بطاطس محمرة","30"],["خضار مشكل","15"],["شوربة لسان عصفور","15"]]},
+ {t:"🍚 ركن اللازز",n:"صغير / وسط / كبير",i:[
+   ["رز أبيض بالخلطة","30 / 45 / 60"],["رز أبيض سادة","25 / 35 / 50"],
+   ["رز بسمتي بالخلطة","30 / 45 / 60"],["رز بسمتي سادة","25 / 35 / 50"]]},
+ {t:"🥗 ركن السلطات",i:[
+   ["سلطة بلدي","5"],["بابا غنوج","5"],["طحينة","5"],["ثومية","10"],["مخلل مشكل","5"]]},
+ {t:"🍽️ ركن التسوية (إضافي)",i:[
+   ["تسوية البط والديك الرومي وكباب حلة","60"],
+   ["تسوية الكفتة والفراخ واللحمة","50"]]}
+];
+let MENU=DEFAULT_MENU;
+
+const menuBody=document.getElementById('menuBody');
+const catNav=document.getElementById('catNav');
+let spy=null;
+
+function renderMenu(){
+ const st=menuBody.scrollTop;
+ menuBody.innerHTML=MENU.map((c,idx)=>`
+  <div class="cat" id="cat-${idx}">
+    <h3>${c.t}</h3>${c.n?`<span class="note">${c.n}</span>`:''}
+    ${c.i.map(it=>`<div class="item"><span class="name">${it[0]}</span><span class="dots"></span><span class="price">${it[1]}</span></div>`).join('')}
+  </div>`).join('');
+ catNav.innerHTML=MENU.map((c,idx)=>`<button class="cat-chip" onclick="goCat(${idx},this)">${c.t}</button>`).join('');
+ if(catNav.children[0])catNav.children[0].classList.add('active');
+ if(spy)spy.disconnect();
+ spy=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){
+   const idx=+e.target.id.split('-')[1];
+   document.querySelectorAll('.cat-chip').forEach((c,k)=>{
+     c.classList.toggle('active',k===idx);
+     if(k===idx)c.scrollIntoView({inline:'center',block:'nearest',behavior:'smooth'});
+   });
+ }})},{root:menuBody,rootMargin:'-25% 0px -65% 0px'});
+ MENU.forEach((_,idx)=>spy.observe(document.getElementById('cat-'+idx)));
+ menuBody.scrollTop=st;
+}
+renderMenu();
+
+/* تحميل المنيو من السحابة — لايف من لوحة التحكم */
+if(typeof firebase!=='undefined'){
+ try{
+  firebase.initializeApp(FIREBASE_CONFIG);
+  const db=firebase.firestore();
+  db.collection('menu').doc('data').onSnapshot(s=>{
+    if(s.exists&&Array.isArray(s.data().cats)&&s.data().cats.length){
+      MENU=s.data().cats.map(c=>({t:c.t,n:c.n||'',i:(c.items||[]).map(x=>[x.name,x.price])}));
+      renderMenu();
+      showToast('تم تحديث المنيو ✨');
+    }
+  },err=>console.warn('سحابة غير متاحة — المنيو الافتراضي شغال',err));
+ }catch(e){console.warn(e)}
+}
+
+function goCat(idx,chip){
+ document.getElementById('cat-'+idx).scrollIntoView({behavior:'smooth',block:'start'});
+ document.querySelectorAll('.cat-chip').forEach(c=>c.classList.remove('active'));
+ chip.classList.add('active');
+}
+
+function openMenu(push=true){
+ document.getElementById('menuOverlay').classList.add('open');
+ document.body.style.overflow='hidden';
+ if(push)history.pushState({menu:1},'','#menu');
+ menuBody.scrollTop=0;
+}
+function closeMenu(fromPop=false){
+ const ov=document.getElementById('menuOverlay');
+ if(!ov.classList.contains('open'))return;
+ ov.classList.remove('open');
+ document.body.style.overflow='';
+ if(!fromPop&&location.hash==='#menu')history.back();
+}
+window.addEventListener('popstate',()=>closeMenu(true));
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeMenu()});
+if(location.hash==='#menu')openMenu(false);
+
+async function shareSite(){
+ const d={title:document.title,text:'مشويات عبد الباسط باسم 🍖',url:location.href};
+ if(navigator.share){try{await navigator.share(d)}catch(e){}}
+ else{navigator.clipboard.writeText(location.href);showToast('تم نسخ اللينك ✅')}
+}
+function showToast(text){const t=document.getElementById('toast');t.textContent=text||'تم نسخ اللينك ✅';t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2200)}
+document.getElementById('yr').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
