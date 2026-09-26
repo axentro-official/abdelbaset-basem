@@ -209,7 +209,7 @@ footer{text-align:center;color:#8a6f58;font-size:12.5px;margin-top:26px;line-hei
     <h2>📍 فرع الخمسين</h2>
     <div class="addr">
       <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-      خلف ديكا بدر – أمام المعهد الأزهري
+      خلف حديقة بدر – أمام المعهد الأزهري
     </div>
     <div class="chips">
       <a href="tel:+20100420580">01004204580</a>
@@ -324,7 +324,6 @@ if(typeof firebase!=='undefined'){
     if(s.exists&&Array.isArray(s.data().cats)&&s.data().cats.length){
       MENU=s.data().cats.map(c=>({t:c.t,n:c.n||'',i:(c.items||[]).map(x=>[x.name,x.price])}));
       renderMenu();
-      showToast('تم تحديث المنيو ✨');
     }
   },err=>console.warn('سحابة غير متاحة — المنيو الافتراضي شغال',err));
  }catch(e){console.warn(e)}
